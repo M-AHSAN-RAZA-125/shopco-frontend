@@ -43,26 +43,63 @@ export const setToken = (token) => {
 const LOCAL_HOSTS = ["localhost", "127.0.0.1", "[::1]"];
 
 // Product images:
-//  - "/images/xyz.png" lives in this frontend's /public/images  -> keep it relative
-//  - "https://..." (e.g. Cloudinary) used as is
-//  - anything else relative is loaded from the backend
+//  - "data:image/..." (Base64) or "blob:..." -> used directly
+//  - "/images/xyz.png" lives in this frontend's /public/images -> keep relative
+//  - "https://..." (e.g. Cloudinary, Unsplash) used as is
+//  - anything else relative (/uploads/..., new /images/...) is loaded from the backend
 export const getImageUrl = (image) => {
   const imagePath = typeof image === "string" ? image : image?.url || image?.path;
-  if (!imagePath) return "";
-  if (imagePath.startsWith("/images/")) return imagePath;
+  if (!imagePath) return "/images/product-placeholder.svg";
 
+  // Base64 data URLs & Blob URLs
+  if (imagePath.startsWith("data:image/") || imagePath.startsWith("blob:")) {
+    return imagePath;
+  }
+
+  // Absolute web URLs
+  if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
+    try {
+      const url = new URL(imagePath);
+      const apiOrigin = new URL(API_BASE_URL, window.location.origin).origin;
+      if (LOCAL_HOSTS.includes(url.hostname) && !LOCAL_HOSTS.includes(new URL(apiOrigin).hostname)) {
+        return new URL(`${url.pathname}${url.search}${url.hash}`, `${apiOrigin}/`).href;
+      }
+      return imagePath;
+    } catch {
+      return imagePath;
+    }
+  }
+
+  // Pre-bundled static images in frontend /public/images/
+  const FRONTEND_PREBUNDLED = [
+    "black-t-shirt.png",
+    "casual.png",
+    "checkered-shirt.png",
+    "courage-graphic-t-shirt.png",
+    "faded-skinny-jeans.png",
+    "formal.png",
+    "gym.png",
+    "loose-fit-bermuda-shorts.png",
+    "Party.png",
+    "product-placeholder.svg",
+    "skinny-fit-jeans.png",
+    "sleeve-stripped-t-shirt.png",
+    "vertical-stripped-shirt.png",
+    "ahsan-raza.jpg",
+  ];
+
+  const filename = imagePath.replace(/^\/?(images|uploads)\//i, "");
+  if (imagePath.startsWith("/images/") && FRONTEND_PREBUNDLED.includes(filename)) {
+    return imagePath;
+  }
+
+  // Relative path from backend (/uploads/..., /images/..., or filename)
   try {
     const apiOrigin = new URL(API_BASE_URL, window.location.origin).origin;
-    const imageUrl = new URL(imagePath, `${apiOrigin}/`);
-    if (!["http:", "https:"].includes(imageUrl.protocol)) return "";
-
-    // An old absolute localhost URL saved in the DB must not be used on the live site.
-    if (LOCAL_HOSTS.includes(imageUrl.hostname) && !LOCAL_HOSTS.includes(new URL(apiOrigin).hostname)) {
-      return new URL(`${imageUrl.pathname}${imageUrl.search}${imageUrl.hash}`, `${apiOrigin}/`).href;
-    }
-    return imageUrl.href;
+    const cleanPath = imagePath.startsWith("/") ? imagePath : `/${imagePath}`;
+    return `${apiOrigin}${cleanPath}`;
   } catch {
-    return "";
+    return imagePath;
   }
 };
 
