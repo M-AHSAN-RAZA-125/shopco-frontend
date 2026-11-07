@@ -1,0 +1,30 @@
+.announcement {
+    border: 2px solid black;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    gap: 10px;
+}
+
+.discount_text {
+    color: white;
+}
+
+.sign_up>a {
+    color: white;
+}
+
+@media (max-width: 410px) {
+    .discount_text {
+    /* color: white; */
+    font-size: 10px;
+}
+
+.sign_up>a {
+    /* color: white; */
+    font-size: 10px;
+}
+}

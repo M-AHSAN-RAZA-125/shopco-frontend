@@ -1,0 +1,29 @@
+.product_tile_link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.product_category {
+    margin: 4px 0 0;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 13px;
+    text-transform: capitalize;
+}
+
+.products_message {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.products_message button {
+    margin-left: 8px;
+    border: 0;
+    background: none;
+    color: #000;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+}

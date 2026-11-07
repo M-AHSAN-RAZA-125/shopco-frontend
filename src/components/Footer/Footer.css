@@ -1,0 +1,151 @@
+.footer_section {
+    background-color: #F0F0F0;
+    padding-top: 140px;
+    /* Newsletter overlay ke adjustment ke liye space */
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+.footer_container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.footer_top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* Brand Section */
+.footer_brand {
+    max-width: 248px;
+}
+
+.footer_logo {
+    font-size: 33px;
+    font-weight: 900;
+    margin-bottom: 25px;
+    color: #000000;
+}
+
+.footer_desc {
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 35px;
+}
+
+.social_links {
+    display: flex;
+    gap: 12px;
+}
+
+.social_links a {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Links Columns */
+.footer_links_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px;
+    flex-grow: 1;
+}
+
+.footer_col h4 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 26px;
+    color: #000000;
+}
+
+.footer_col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_col ul li {
+    margin-bottom: 16px;
+}
+
+.footer_col ul li a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.footer_col ul li a:hover {
+    color: #000000;
+}
+
+/* Divider */
+.footer_divider {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+/* Bottom Bar */
+.footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright_text {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.payment_badges {
+    display: flex;
+    gap: 12px;
+}
+
+.pay_card {
+    background: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.social {
+    color: black;
+}
+
+/* Responsive Rules */
+@media (max-width: 992px) {
+    .footer_top {
+        flex-direction: column;
+    }
+
+    .footer_links_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}

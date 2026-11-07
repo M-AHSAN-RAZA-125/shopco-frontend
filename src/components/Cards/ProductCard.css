@@ -1,0 +1,139 @@
+/* Card Section Wrapper */
+.product_section {
+    width: 100%;
+    max-width: 1240px;
+    margin: 60px auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+/* Main Heading (NEW ARRIVALS) */
+.section_heading {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+/* Responsive Grid Layout */
+.product_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+/* Single Product Card */
+.product_card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Card Image Box */
+.card_img_wrapper {
+    width: 100%;
+    height: 298px;
+    background-color: #F0EEED;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card_img_wrapper img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product_card:hover .card_img_wrapper img {
+    transform: scale(1.06);
+}
+
+/* Product Name */
+.product_title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin-top: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Ratings */
+.product_rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.stars {
+    color: #FFC633;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.rating_num {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+}
+
+/* Price Section */
+.product_price_box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.current_price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.old_price {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.4);
+    text-decoration: line-through;
+    font-weight: 700;
+}
+
+/* Discount Badge */
+.discount_badge {
+    background-color: rgba(255, 51, 51, 0.1);
+    color: #FF3333;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 62px;
+}
+
+/* Mobile Screens Adjustments */
+@media (max-width: 600px) {
+    .product_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .card_img_wrapper {
+        height: 200px;
+    }
+
+    .product_title {
+        font-size: 14px;
+    }
+
+    .current_price {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,33 @@
+.view_all_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+    width: 100%;
+}
+
+.view_all_btn {
+    width: 218px;
+    height: 52px;
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 62px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view_all_btn:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    border-color: #000000;
+}
+
+@media (max-width: 600px) {
+    .view_all_btn {
+        width: 100%;
+        height: 46px;
+        font-size: 14px;
+    }
+}

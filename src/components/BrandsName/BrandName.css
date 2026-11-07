@@ -1,0 +1,29 @@
+.black {
+    width: 100%;
+    max-width: 100%;
+    min-height: 122px;
+    background-color: #000000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* space-around ki jagah space-evenly right gap khatam karega */
+    align-items: center;
+    padding: 20px 16px;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.brands_logo {
+    height: clamp(22px, 3vw, 34px);
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+@media (min-width: 768px) {
+    .black {
+        height: 122px;
+        padding: 0 24px;
+        flex-wrap: nowrap;
+    }
+}

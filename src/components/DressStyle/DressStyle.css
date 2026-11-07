@@ -1,0 +1,96 @@
+.dress_style_container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 80px auto 40px auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.dress_style_card {
+    background-color: #F0F0F0;
+    border-radius: 40px;
+    padding: 60px 64px;
+}
+
+.dress_style_heading {
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 60px;
+}
+
+/* Grid Layout */
+.style_grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* 1:2 ratio for asymmetric row */
+    gap: 20px;
+}
+
+/* Base Style Box */
+.style_box {
+    height: 289px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 25px 36px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.style_box:hover {
+    transform: scale(1.02);
+}
+
+.style_title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000000;
+}
+
+/* Alternating Grid Row 2 */
+.style_box:nth-child(3) {
+    grid-column: span 1;
+}
+
+/* Custom Background Images */
+.casual_bg {
+    background-image: url('../../../public/images/casual.png');
+}
+
+.formal_bg {
+    background-image: url('../../../public/images/formal.png');
+}
+
+.party_bg {
+    background-image: url('../../../public/images/Party.png');
+}
+
+.gym_bg {
+    background-image: url('../../../public/images/gym.png');
+}
+
+/* Responsive Layout */
+@media (max-width: 992px) {
+    .style_grid {
+        grid-template-columns: 1fr;
+        /* Mobile par single column */
+    }
+
+    .dress_style_card {
+        padding: 40px 24px;
+        border-radius: 20px;
+    }
+
+    .dress_style_heading {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .style_box {
+        height: 190px;
+    }
+}

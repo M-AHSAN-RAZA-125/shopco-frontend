@@ -1,0 +1,71 @@
+.newsletter_wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 16px;
+    position: relative;
+    margin-bottom: -90px;
+    /* Footer ke upar overlay karne ke liye */
+    z-index: 10;
+}
+
+.newsletter_card {
+    background-color: #000000;
+    border-radius: 20px;
+    padding: 36px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter_card h2 {
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 900;
+    max-width: 550px;
+    line-height: 45px;
+}
+
+.newsletter_form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 350px;
+}
+
+.newsletter_form input {
+    width: 100%;
+    height: 48px;
+    border-radius: 62px;
+    border: none;
+    padding: 0 16px;
+    outline: none;
+    font-size: 14px;
+}
+
+.subscribe_btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 62px;
+    border: none;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .newsletter_card {
+        flex-direction: column;
+        padding: 32px 24px;
+        gap: 28px;
+    }
+
+    .newsletter_card h2 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .newsletter_form {
+        width: 100%;
+    }
+}

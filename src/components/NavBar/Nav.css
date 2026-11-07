@@ -1,0 +1,278 @@
+.Nav {
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+
+/* ================= LOGO ================= */
+
+.nav_logo {
+    width: 18%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_logo img {
+    max-width: 170px;
+    width: 100%;
+    height: auto;
+}
+
+
+/* ================= NAV LINKS ================= */
+
+.nav_list {
+    width: 32%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+.nav_link {
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+}
+
+
+/* ================= SEARCH ================= */
+
+.nav_search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_input {
+    width: 100%;
+    max-width: 420px;
+    height: 44px;
+    border-radius: 62px;
+    border: none;
+    outline: none;
+    background-color: #f0f0f0;
+    color: #000;
+    font-size: 15px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.nav_input::placeholder {
+    color: #666;
+}
+
+
+/* ================= ICONS ================= */
+
+.nav_icons {
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_icon {
+    width: 20px;
+    height: 20px;
+}
+
+.nav_menu_icon {
+    display: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+.cart_icon_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart_badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #ff3333;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1000px) {
+
+    .Nav {
+        padding: 0 4%;
+        gap: 15px;
+    }
+
+    .nav_logo {
+        width: 18%;
+    }
+
+    .nav_list {
+        width: 35%;
+    }
+
+    .nav_items {
+        gap: 18px;
+        font-size: 14px;
+    }
+
+    .nav_input {
+        max-width: 300px;
+        font-size: 14px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .Nav {
+        min-height: 70px;
+        padding: 0 5%;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+
+    /* Logo */
+
+    .nav_logo {
+        width: auto;
+        flex: 1;
+    }
+
+    .nav_logo img {
+        width: 140px;
+    }
+
+
+    /* Hamburger + links */
+
+    .nav_list {
+        width: auto;
+        order: -1;
+    }
+
+    .nav_menu_icon {
+        display: block;
+    }
+
+    .nav_items {
+        display: none;
+    }
+
+
+    /* Search */
+
+    .nav_search {
+        flex: 1;
+    }
+
+    .nav_input {
+        height: 40px;
+        font-size: 13px;
+        padding: 0 15px;
+        max-width: none;
+    }
+
+
+    /* Icons */
+
+    .nav_icons {
+        width: auto;
+        gap: 14px;
+    }
+
+    .nav_icon {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .Nav {
+        min-height: 65px;
+        padding: 0 4%;
+        gap: 8px;
+    }
+
+    .nav_logo img {
+        width: 115px;
+    }
+
+    .nav_input {
+        height: 36px;
+        font-size: 11px;
+        padding: 0 12px;
+    }
+
+    .nav_icons {
+        gap: 10px;
+    }
+
+    .nav_icon {
+        width: 17px;
+        height: 17px;
+    }
+
+    .nav_menu_icon {
+        font-size: 18px;
+    }
+}
+
+/* ================= SEARCH FORM + LOGOUT ================= */
+
+.nav_search_form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_logout_btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+}
