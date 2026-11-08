@@ -1,4 +1,4 @@
-.black {
+.brands_banner {
     width: 100%;
     max-width: 100%;
     min-height: 122px;
@@ -21,7 +21,7 @@
 }
 
 @media (min-width: 768px) {
-    .black {
+    .brands_banner {
         height: 122px;
         padding: 0 24px;
         flex-wrap: nowrap;

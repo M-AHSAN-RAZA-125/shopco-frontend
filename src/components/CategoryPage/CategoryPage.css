@@ -83,48 +83,55 @@
 .color_circle {
     width: 24px;
     height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    flex-shrink: 0;
     border-radius: 50%;
     cursor: pointer;
     border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
-.green {
+.color_options .green {
     background: #00c12b;
 }
 
-.red {
+.color_options .red {
     background: #f52525;
 }
 
-.yellow {
+.color_options .yellow {
     background: #f5dd06;
 }
 
-.orange {
+.color_options .orange {
     background: #f57906;
 }
 
-.cyan {
+.color_options .cyan {
     background: #06caf5;
 }
 
-.blue {
+.color_options .blue {
     background: #063af5;
 }
 
-.purple {
+.color_options .purple {
     background: #7d06f5;
 }
 
-.pink {
+.color_options .pink {
     background: #f506a4;
 }
 
-.white {
+.color_options .white {
     background: #ffffff;
 }
 
-.black {
+.color_options .black {
     background: #000000;
 }
 

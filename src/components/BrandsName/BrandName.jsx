@@ -8,7 +8,7 @@ import calvin from '../../assets/calvin.png'
 
 const BrandName = () => {
     return (
-        <div className='black'>
+        <div className='brands_banner'>
             <img src={versace} alt="Versace" className="brands_logo" />
             <img src={zara} alt="Zara" className="brands_logo" />
             <img src={gucci} alt="Gucci" className="brands_logo" />
